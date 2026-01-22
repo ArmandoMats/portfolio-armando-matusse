@@ -244,7 +244,7 @@ function App() {
 
                 <div className="input-group">
                   <label htmlFor="mensagem">Mensagem</label>
-                  <textarea id="mensagem" name="mensagem" rows={5} placeholder="Como posso ajudar no seu projeto?" required></textarea>
+                  <textarea id="mensagem" name="mensagem" rows={5} placeholder="Como posso ajudar no seu projecto?" required></textarea>
                 </div>
 
                 <button type="submit" className="button-enviar">
