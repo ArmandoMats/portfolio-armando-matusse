@@ -96,14 +96,14 @@ function App() {
 
           {/* Section Portfólio */}
           <section id="portfolio" className="portfolio-section">
-            <h3 className="section-title">Projetos em Destaque</h3>
+            <h3 className="section-title">Projectos em Destaque</h3>
             <div className="section-underline"></div>
 
             <div className="projects-grid">
               {/* Projeto 1: Gestão Académica */}
               <article className="project-card">
                 <div className="project-content">
-                  <span className="project-category">Projeto em Grupo</span>
+                  <span className="project-category">Procjeto em Grupo</span>
                   <h4 className="project-title">Sistema de Gestão Académica</h4>
                   <p className="project-text">
                     Sistema de gestão escolar completo desenvolvido para apoiar a administração académica e pedagógica de instituições de ensino. 
@@ -114,7 +114,7 @@ function App() {
                   </p>
 
                   <div className="tech-stack">
-                    <span>Java</span> <span>React</span> <span>PostgreSQL</span> <span>Figma</span>
+                    <span>Java</span> <span>Spring Boot</span> <span>React</span> <span>PostgreSQL</span> <span>Figma</span> <span>Flutter</span> <span>Dart</span> <span>CSS</span> <span>TypeScript</span> <span>HTML</span>
                   </div>
                 </div>
               </article>
@@ -122,7 +122,7 @@ function App() {
               {/* Projeto 2: Gestão de Ginásio */}
               <article className="project-card">
                 <div className="project-content">
-                  <span className="project-category">Projeto Individual</span>
+                  <span className="project-category">Projecto Individual</span>
                   <h4 className="project-title">Sistema de Gestão de Ginásio</h4>
                 <p className="project-text">
                   Sistema de gestão de ginásio desenvolvido para apoiar a administração de membros e operações financeiras.
@@ -133,7 +133,7 @@ function App() {
                 </p>
 
                   <div className="tech-stack">
-                    <span>Flutter</span> <span>MySQL</span> <span>Express.js</span>
+                    <span>Flutter</span> <span>Dart</span> <span>MySQL</span> <span>Express.js</span> <span>JavaScript</span>
                   </div>
                 </div>
               </article>
@@ -141,7 +141,7 @@ function App() {
               {/* Projeto 3: Delivery */}
               <article className="project-card featured">
                 <div className="project-content">
-                  <span className="project-category">Projeto em Grupo</span>
+                  <span className="project-category">Projecto em Grupo</span>
                   <h4 className="project-title">Sistema de Delivery Mobile</h4>
                   <p className="project-text">
                     Sistema de delivery mobile desenvolvido para suportar pedidos, acompanhamento em tempo real
@@ -152,7 +152,7 @@ function App() {
                   </p>
 
                   <div className="tech-stack">
-                    <span>Flutter</span> <span>Spring Boot</span> <span>Docker</span> <span>Mapbox</span> <span>GoogleMaps</span> <span>Figma</span> 
+                    <span>Flutter</span> <span>Dart</span>  <span>Java</span> <span>Spring Boot</span> <span>Docker</span> <span>Mapbox</span> <span>PostgreSQL</span> <span>Figma</span> 
                   </div>
                 </div>
               </article>
@@ -172,9 +172,9 @@ function App() {
                   <h4>Programação & Desenvolvimento</h4>
                 </div>
                 <ul className="skill-list">
-                  <li><ChevronRight size={14} className="list-icon" /> <strong>Linguagens:</strong> Java, JavaScript, Dart</li>
-                  <li><ChevronRight size={14} className="list-icon" /> <strong>Web:</strong> HTML, CSS, React</li>
-                  <li><ChevronRight size={14} className="list-icon" /> <strong>Frameworks:</strong> Spring Boot, Flutter, Express.js</li>
+                  <li><ChevronRight size={14} className="list-icon" /> <strong>Linguagens:</strong> Java, JavaScript, TypeScript, Dart</li>
+                  <li><ChevronRight size={14} className="list-icon" /> <strong>Web:</strong> HTML, CSS</li>
+                  <li><ChevronRight size={14} className="list-icon" /> <strong>Frameworks:</strong> Spring Boot, Flutter, Express.js, React</li>
                 </ul>
               </div>
 
@@ -216,8 +216,8 @@ function App() {
             <div className="contact-container">
               {/* Info Lateral */}
               <div className="contact-info">
-                <h4>Informações de Contato</h4>
-                <p>Sinta-se à vontade para entrar em contato para projetos ou colaborações.</p>
+                <h4>Informações de Contacto</h4>
+                <p>Sinta-se à vontade para entrar em contacto para projectos ou colaborações.</p>
                 
                 <div className="info-item">
                   <Phone size={20} color="#AEC3B0" />
