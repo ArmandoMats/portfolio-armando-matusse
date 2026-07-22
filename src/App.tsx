@@ -52,26 +52,48 @@ function App() {
               {/* Avatar AM */}
               <div className="avatar-circle">AM</div>
 
+              {/* Tag de Experiência em Destaque */}
+              <div className="experience-pill">
+                <span className="pill-dot"></span>
+                <span className="pill-text">+1 Ano de Experiência Prática</span>
+              </div>
+
               {/* Nome */}
               <h1 className="hero-name">Armando Matusse</h1>
 
               {/* Titulo */}
               <h2 className="hero-role">Engenheiro de Software</h2>
 
-            <p className="hero-description">
+              <p className="hero-description">
                 Estudante finalista de Engenharia Informática apaixonado por programação e engenharia de software.
-                Transformo ideias em código, criando soluções digitais funcionais, escaláveis e bem desenhadas.
+                Com <strong>+1 ano de experiência prática</strong> no desenvolvimento de soluções digitais funcionais, escaláveis e bem desenhadas.
               </p>
 
-              {/* Botao*/}
+              {/* Botões */}
               <div className="hero-actions">
-                {/* <button className="btn-primary">Ver Projetos</button> */}
-
-                {/* Botao contactar */}
+                <a href="#portfolio" className="btn-primary" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                  Ver Projetos
+                </a>
                 <a href="#contactar" className="btn-secondary" 
                   style={{ textDecoration: 'none', display: 'inline-block' }}>
                   Contactar
                 </a>
+              </div>
+
+              {/* Stats Grid */}
+              <div className="hero-stats-grid">
+                <div className="hero-stat-card highlight">
+                  <span className="hero-stat-value">+1 Ano</span>
+                  <span className="hero-stat-title">Experiência Prática</span>
+                </div>
+                <div className="hero-stat-card">
+                  <span className="hero-stat-value">6+</span>
+                  <span className="hero-stat-title">Projetos Lançados</span>
+                </div>
+                <div className="hero-stat-card">
+                  <span className="hero-stat-value">100%</span>
+                  <span className="hero-stat-title">Dedicação & Qualidade</span>
+                </div>
               </div>
             </div>
           </section>
