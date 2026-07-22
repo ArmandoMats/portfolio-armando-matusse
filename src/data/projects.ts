@@ -22,7 +22,7 @@ export const projects: Project[] = [
     image: auroraImage,
     visitUrl: 'https://aurora.wearearche.com/',
     description: 'Aurora centraliza alunos, matrículas, notas, propinas, documentos e comunicação numa única plataforma segura e intuitiva.',
-    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
+    technologies: ['React', 'TypeScript', 'Java Spring Boot', 'PostgreSQL', 'REST API', 'Dart', 'Flutter'],
     category: 'Plataforma de Gestão'
   },
   {
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     image: sopedirImage,
     visitUrl: 'https://sopedir.wearearche.com/',
     description: 'Plataforma corporativa moderna com foco na otimização de processos e identidade visual marcante.',
-    technologies: ['React', 'TypeScript', 'Express.js', 'CSS3', 'REST API'],
+    technologies: ['React', 'TypeScript', 'Java Spring Boot', 'PostgreSQL', 'REST API', 'Dart', 'Flutter', 'Figma', 'UI/UX'],
     category: 'Plataforma Corporativa'
   },
   {
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     image: txayaImage,
     visitUrl: 'https://txaya.wearearche.com',
     description: 'Plataforma de streaming de música 100% Moçambicana. Onde artistas locais encontram o seu público e os fãs encontram os seus artistas favoritos.',
-    technologies: ['React', 'TypeScript', 'HTML5', 'Audio Streaming', 'Tailwind CSS'],
+    technologies: ['React', 'TypeScript', 'Java Spring Boot', 'PostgreSQL', 'REST API', 'Dart', 'Flutter', 'Figma', 'UI/UX'],
     category: 'Streaming de Música'
   },
   {
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     image: lesfleurImage,
     visitUrl: 'https://lesfleurmoz.com/',
     description: 'Solução digital premium desenvolvida com design sofisticado e experiência de utilização fluida.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Figma', 'UI/UX'],
+    technologies: ['React', 'TypeScript', 'Figma', 'UI/UX'],
     category: 'Web Design Premium'
   },
   {
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     image: lablueImage,
     visitUrl: 'https://lablue258.com/',
     description: 'Solução digital premium desenvolvida com design sofisticado e experiência de utilização fluida.',
-    technologies: ['React', 'TypeScript', 'CSS3', 'Responsive Design', 'UI/UX'],
+    technologies: ['React', 'TypeScript', 'Java Spring Boot', 'PostgreSQL', 'REST API'],
     category: 'Solução Digital'
   },
   {
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     image: treatYourselfImage,
     visitUrl: 'https://treatyourself.wearearche.com/',
     description: 'Plataforma de apresentação para a marca de moda Treat YourSelf, combinando um design visual marcante com uma experiência de utilização fluida.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Figma', 'UI/UX'],
+    technologies: ['React', 'TypeScript', 'Figma', 'UI/UX'],
     category: 'Plataforma de Moda'
   },
 ];
