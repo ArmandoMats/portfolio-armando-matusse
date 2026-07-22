@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Code2, Settings, Database, ChevronRight, Mail, Phone, Send } from 'lucide-react';
+import { Code2, Settings, Database, ChevronRight, Mail, Phone, Send, ExternalLink } from 'lucide-react';
+import { projects } from './data/projects';
 import './App.css';
 
 function App() {
@@ -100,62 +101,38 @@ function App() {
             <div className="section-underline"></div>
 
             <div className="projects-grid">
-              {/* Projeto 1: Gestão Académica */}
-              <article className="project-card">
-                <div className="project-content">
-                  <span className="project-category">Procjeto em Grupo</span>
-                  <h4 className="project-title">Sistema de Gestão Académica</h4>
-                  <p className="project-text">
-                    Sistema de gestão escolar completo desenvolvido para apoiar a administração académica e pedagógica de instituições de ensino. 
-                    Permite o cadastro e gestão de alunos, docentes e turmas, controlo de inscrições e matrículas, organização de disciplinas e horários, 
-                    lançamento, consulta e visualização de notas, acompanhamento do desempenho académico e gestão de histórico escolar. 
-                    O sistema inclui módulos para gestão administrativa, controlo de utilizadores e permissões, centralização e segurança de dados, 
-                    relatórios académicos e operacionais, bem como interfaces intuitivas para administradores, docentes e estudantes.
-                  </p>
-
-                  <div className="tech-stack">
-                    <span>Java</span> <span>Spring Boot</span> <span>React</span> <span>PostgreSQL</span> <span>Figma</span> <span>Flutter</span> <span>Dart</span> <span>CSS</span> <span>TypeScript</span> <span>HTML</span>
+              {projects.map((project) => (
+                <article key={project.id} className="project-card">
+                  <div className="project-image-wrapper">
+                    <img src={project.image} alt={project.name} className="project-image" />
                   </div>
-                </div>
-              </article>
+                  <div className="project-content">
+                    {project.category && (
+                      <span className="project-category">{project.category}</span>
+                    )}
+                    <h4 className="project-title">{project.name}</h4>
+                    <p className="project-text">{project.description}</p>
 
-              {/* Projeto 2: Gestão de Ginásio */}
-              <article className="project-card">
-                <div className="project-content">
-                  <span className="project-category">Projecto Individual</span>
-                  <h4 className="project-title">Sistema de Gestão de Ginásio</h4>
-                <p className="project-text">
-                  Sistema de gestão de ginásio desenvolvido para apoiar a administração de membros e operações financeiras.
-                  Permite o registo e gestão de clientes, controlo de inscrições e planos, processamento de pagamentos,
-                  emissão e gestão de recibos, acompanhamento de mensalidades, histórico financeiro e controlo de acessos.
-                  Inclui uma interface desktop optimizada para desempenho e usabilidade, integração com API REST,
-                  centralização segura de dados e suporte a relatórios administrativos e financeiros.
-                </p>
+                    <div className="tech-stack">
+                      {project.technologies.map((tech, index) => (
+                        <span key={index}>{tech}</span>
+                      ))}
+                    </div>
 
-                  <div className="tech-stack">
-                    <span>Flutter</span> <span>Dart</span> <span>MySQL</span> <span>Express.js</span> <span>JavaScript</span>
+                    <div className="project-actions">
+                      <a 
+                        href={project.visitUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="btn-visit"
+                      >
+                        <span>Visitar Website</span>
+                        <ExternalLink size={16} />
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </article>
-
-              {/* Projeto 3: Delivery */}
-              <article className="project-card featured">
-                <div className="project-content">
-                  <span className="project-category">Projecto em Grupo</span>
-                  <h4 className="project-title">Sistema de Delivery Mobile</h4>
-                  <p className="project-text">
-                    Sistema de delivery mobile desenvolvido para suportar pedidos, acompanhamento em tempo real
-                    e serviços baseados em localização. Permite o registo de utilizadores, criação e gestão de pedidos,
-                    visualização de rotas, cálculo de distâncias, acompanhamento do estado das entregas em mapa,
-                    integração com serviços de geolocalização e comunicação com serviços backend.
-                    A solução utiliza uma arquitetura moderna, com integração de mapas e suporte à containerização.
-                  </p>
-
-                  <div className="tech-stack">
-                    <span>Flutter</span> <span>Dart</span>  <span>Java</span> <span>Spring Boot</span> <span>Docker</span> <span>Mapbox</span> <span>PostgreSQL</span> <span>Figma</span> 
-                  </div>
-                </div>
-              </article>
+                </article>
+              ))}
             </div>
           </section>
 
