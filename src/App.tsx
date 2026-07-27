@@ -102,6 +102,7 @@ function App() {
               <p className="card-status">Estágio de 6 meses focado em desenvolvimento de software, suporte técnico e vivência em ambiente corporativo.</p>
               <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px solid rgba(174, 195, 176, 0.2)', fontSize: '14px', color: 'var(--cream-green)' }}>
                 <strong>Recomendação:</strong> Edwin Matlaba (<a href="tel:+258840488810" style={{ color: 'var(--cream-green)', textDecoration: 'underline' }}>+258 84 048 8810</a>)
+                <strong>Recomendação:</strong> Eleuterio Notico (<a href="tel:+258860675700" style={{ color: 'var(--cream-green)', textDecoration: 'underline' }}>+258 86 067 5700</a>)
               </div>
               <div className="status-indicator completed">Concluído</div>
             </div>
