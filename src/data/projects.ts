@@ -21,6 +21,33 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'cbe',
+    name: 'CBE',
+    image: cbeImage,
+    visitUrl: 'https://cbe.co.mz',
+    description: 'Plataforma de recrutamento e seleção desenvolvida para a CBE, otimizando a gestão de candidaturas, publicação de vagas e seleção de talentos.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'UI/UX'],
+    category: 'Plataforma de Recrutamento'
+  },
+  {
+    id: 'energyworks',
+    name: 'Energy Works',
+    image: energyworksImage,
+    visitUrl: 'https://energyworks.co.mz',
+    description: 'Plataforma web para a Energy Works Lda, empresa moçambicana atuante no mercado desde 2014, especializada em serviços de gestão de qualidade, ambiente e segurança.',
+    technologies: ['React', 'TypeScript', 'Figma', 'UI/UX'],
+    category: 'Energia & Soluções Tecnológicas'
+  },
+  {
+    id: 'utc',
+    name: 'UTC - Uinge Training Center',
+    image: utcImage,
+    visitUrl: 'https://utc.co.mz',
+    description: 'Plataforma de formação e capacitação para o Uinge Training Center, oferecendo aprendizagem presencial, online e híbrida para transformar conhecimento em impacto real.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL'],
+    category: 'Educação & Treinamento'
+  },
+  {
     id: 'aurora',
     name: 'Aurora',
     image: auroraImage,
@@ -48,25 +75,6 @@ export const projects: Project[] = [
     category: 'Streaming de Música'
   },
   {
-    id: 'cbe',
-    name: 'CBE',
-    image: cbeImage,
-    visitUrl: 'https://cbe.co.mz',
-    description: 'Plataforma de recrutamento e seleção desenvolvida para a CBE, otimizando a gestão de candidaturas, publicação de vagas e seleção de talentos.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'UI/UX'],
-    category: 'Plataforma de Recrutamento'
-  }
-  ,
-  {
-    id: 'energyworks',
-    name: 'Energy Works',
-    image: energyworksImage,
-    visitUrl: 'https://energyworks.co.mz',
-    description: 'Plataforma web para a Energy Works Lda, empresa moçambicana atuante no mercado desde 2014, especializada em serviços de gestão de qualidade, ambiente e segurança.',
-    technologies: ['React', 'TypeScript', 'Figma', 'UI/UX'],
-    category: 'Energia & Soluções Tecnológicas'
-  },
-  {
     id: 'makhowo',
     name: 'Makhowo',
     image: makhowoImage,
@@ -75,16 +83,6 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'UI/UX'],
     category: 'Plataforma Digital'
   },
-  {
-    id: 'utc',
-    name: 'UTC - Uinge Training Center',
-    image: utcImage,
-    visitUrl: 'https://utc.co.mz',
-    description: 'Plataforma de formação e capacitação para o Uinge Training Center, oferecendo aprendizagem presencial, online e híbrida para transformar conhecimento em impacto real.',
-    technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL'],
-    category: 'Educação & Treinamento'
-  }
-  ,
   {
     id: 'lesfleur',
     name: 'Les Fleur',
