@@ -4,6 +4,10 @@ import lesfleurImage from '../assets/project_image/lesfleur.webp';
 import auroraImage from '../assets/project_image/aurora.webp';
 import treatYourselfImage from '../assets/project_image/treatyourself.webp';
 import txayaImage from '../assets/project_image/txaya.webp';
+import cbeImage from '../assets/project_image/cbe.webp';
+import energyworksImage from '../assets/project_image/energyworks.webp';
+import makhowoImage from '../assets/project_image/makhowo.webp';
+import utcImage from '../assets/project_image/utc.webp';
 
 export interface Project {
   id: string;
@@ -39,10 +43,48 @@ export const projects: Project[] = [
     name: 'Txaya',
     image: txayaImage,
     visitUrl: 'https://txaya.wearearche.com',
-    description: 'Plataforma de streaming de música 100% Moçambicana. Onde artistas locais encontram o seu público e os fãs encontram os seus artistas favoritos.',
+    description: 'Plataforma de streaming de música e audio 100% Moçambicana. Onde artistas locais encontram o seu público e os fãs encontram os seus artistas favoritos.',
     technologies: ['React', 'TypeScript', 'Java Spring Boot', 'PostgreSQL', 'REST API', 'Dart', 'Flutter', 'Figma', 'UI/UX'],
     category: 'Streaming de Música'
   },
+  {
+    id: 'cbe',
+    name: 'CBE',
+    image: cbeImage,
+    visitUrl: 'https://cbe.co.mz',
+    description: 'Plataforma de recrutamento e seleção desenvolvida para a CBE, otimizando a gestão de candidaturas, publicação de vagas e seleção de talentos.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'UI/UX'],
+    category: 'Plataforma de Recrutamento'
+  }
+  ,
+  {
+    id: 'energyworks',
+    name: 'Energy Works',
+    image: energyworksImage,
+    visitUrl: 'https://energyworks.co.mz',
+    description: 'Plataforma web para a Energy Works Lda, empresa moçambicana atuante no mercado desde 2014, especializada em serviços de gestão de qualidade, ambiente e segurança.',
+    technologies: ['React', 'TypeScript', 'Figma', 'UI/UX'],
+    category: 'Energia & Soluções Tecnológicas'
+  },
+  {
+    id: 'makhowo',
+    name: 'Makhowo',
+    image: makhowoImage,
+    visitUrl: 'https://makhowo.co.mz',
+    description: 'Plataforma web inovadora construída com foco em dinamismo, acessibilidade e arquitetura de software escalável.',
+    technologies: ['React', 'TypeScript', 'UI/UX'],
+    category: 'Plataforma Digital'
+  },
+  {
+    id: 'utc',
+    name: 'UTC - Uinge Training Center',
+    image: utcImage,
+    visitUrl: 'https://utc.co.mz',
+    description: 'Plataforma de formação e capacitação para o Uinge Training Center, oferecendo aprendizagem presencial, online e híbrida para transformar conhecimento em impacto real.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL'],
+    category: 'Educação & Treinamento'
+  }
+  ,
   {
     id: 'lesfleur',
     name: 'Les Fleur',

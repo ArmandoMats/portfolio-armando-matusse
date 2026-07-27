@@ -116,21 +116,6 @@ function App() {
               <div className="status-indicator current">Em andamento</div>
             </div>
 
-            {/* Card 4: Referência / Recomendação */}
-            <div className="education-card">
-              <div className="card-badge">04</div>
-              <span className="card-date">Referência</span>
-              <h4 className="card-title">Recomendação Profissional</h4>
-              <p className="card-institution">Edwin Matlaba</p>
-              <p className="card-status">Contacto de referência para recomendação sobre competências técnicas e conduta profissional.</p>
-              <div style={{ marginTop: '12px', fontSize: '14px', color: 'var(--ash-green)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Phone size={14} color="#AEC3B0" />
-                <a href="tel:+258840488810" style={{ color: 'var(--cream-green)', fontWeight: 600, textDecoration: 'underline' }}>
-                  +258 84 048 8810
-                </a>
-              </div>
-              <div className="status-indicator completed">Disponível</div>
-            </div>
           </div>
         </section>
 
