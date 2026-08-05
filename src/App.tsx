@@ -59,8 +59,8 @@ function App() {
             <h2 className="hero-role">Engenheiro de Software</h2>
 
             <p className="hero-description">
-              Estudante finalista de Engenharia Informática apaixonado por programação e engenharia de software.
-              Com <strong>+1 ano de experiência prática</strong> no desenvolvimento de soluções digitais funcionais, escaláveis e bem desenhadas.
+              Estudante finalista de Licenciatura em Engenharia Informática apaixonado por programação e engenharia de software.
+              Com <strong>+2 anos de experiência prática</strong> no desenvolvimento de soluções digitais funcionais, escaláveis e bem desenhadas.
             </p>
 
             {/* Botões */}
@@ -100,9 +100,9 @@ function App() {
               <h4 className="card-title">Estágio Profissional</h4>
               <p className="card-institution">CBE</p>
               <p className="card-status">Estágio de 6 meses focado em desenvolvimento de software, suporte técnico e vivência em ambiente corporativo.</p>
-              <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px solid rgba(174, 195, 176, 0.2)', fontSize: '14px', color: 'var(--cream-green)' }}>
-                <strong>Recomendação:</strong> Edwin Matlaba (<a href="tel:+258840488810" style={{ color: 'var(--cream-green)', textDecoration: 'underline' }}>+258 84 048 8810</a>)
-                <strong>Recomendação:</strong> Eleuterio Notico (<a href="tel:+258860675700" style={{ color: 'var(--cream-green)', textDecoration: 'underline' }}>+258 86 067 5700</a>)
+              <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px solid rgba(174, 195, 176, 0.2)', fontSize: '14px', color: 'var(--cream-green)', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>Recomendação:</strong> Edwin Matlaba (<a href="tel:+258840488810" style={{ color: 'var(--cream-green)', textDecoration: 'underline' }}>+258 84 048 8810</a>)</div>
+                <div><strong>Recomendação:</strong> Eleuterio Notico (<a href="tel:+258860675700" style={{ color: 'var(--cream-green)', textDecoration: 'underline' }}>+258 86 067 5700</a>)</div>
               </div>
               <div className="status-indicator completed">Concluído</div>
             </div>
@@ -174,9 +174,10 @@ function App() {
                 <h4>Programação & Desenvolvimento</h4>
               </div>
               <ul className="skill-list">
-                <li><ChevronRight size={14} className="list-icon" /> <strong>Linguagens:</strong> Java, JavaScript, TypeScript, Dart</li>
+                <li><ChevronRight size={14} className="list-icon" /> <strong>Linguagens:</strong> Java, JavaScript, TypeScript, Dart, Kotlin, Swift</li>
                 <li><ChevronRight size={14} className="list-icon" /> <strong>Web:</strong> HTML, CSS</li>
-                <li><ChevronRight size={14} className="list-icon" /> <strong>Frameworks:</strong> Spring Boot, Flutter, Express.js, React</li>
+                <li><ChevronRight size={14} className="list-icon" /> <strong>Frameworks:</strong> Spring Boot, Flutter, Express.js, React, Angular</li>
+                <li><ChevronRight size={14} className="list-icon" /> <strong>DevOps & Ferramentas:</strong> Docker</li>
               </ul>
             </div>
 
