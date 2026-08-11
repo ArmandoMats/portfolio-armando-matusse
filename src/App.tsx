@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {
   ExternalLink,
   Mail,
@@ -21,38 +21,62 @@ function App() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
+  // Barra de progresso da viagem
   useEffect(() => {
-    const triggers: ScrollTrigger[] = [];
+    if (!progressRef.current) return;
 
-    // Barra de progresso da viagem
-    if (progressRef.current) {
-      gsap.to(progressRef.current, {
-        scaleX: 1,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: document.body,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 0.2,
-        },
-      });
-    }
+    const tween = gsap.to(progressRef.current, {
+      scaleX: 1,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.2,
+      },
+    });
 
-    // Carrossel horizontal de projetos — pin + scroll horizontal
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }, []);
+
+  // Carrossel horizontal de projetos — pin + scroll horizontal
+  useLayoutEffect(() => {
     const carousel = carouselRef.current;
     const track = trackRef.current;
-    if (carousel && track) {
-      const getTotalScroll = () => track.scrollWidth - carousel.offsetWidth;
-      const totalScroll = getTotalScroll();
-      const endValue = `+=${totalScroll}`;
+    if (!carousel || !track) return;
 
-      const carouselTrigger = ScrollTrigger.create({
+    let tween: gsap.core.Tween | null = null;
+    let trigger: ScrollTrigger | null = null;
+    let isReady = false;
+
+    const getTotalScroll = () => track.scrollWidth - carousel.offsetWidth;
+
+    const setupCarousel = () => {
+      if (isReady) return;
+      const totalScroll = getTotalScroll();
+      if (totalScroll <= 0) return;
+
+      isReady = true;
+      gsap.set(track, { x: 0 });
+
+      tween = gsap.to(track, {
+        x: -totalScroll,
+        ease: 'none',
+      });
+
+      trigger = ScrollTrigger.create({
         trigger: carousel,
         start: 'top top',
-        end: endValue,
+        end: () => `+=${getTotalScroll()}`,
         pin: true,
+        pinSpacing: true,
         scrub: 1,
-        anticipatePin: 1,
+        animation: tween,
+        invalidateOnRefresh: true,
+        refreshPriority: 1,
         onUpdate: (self) => {
           const index = Math.min(
             projects.length - 1,
@@ -61,25 +85,49 @@ function App() {
           setActiveProject(index);
         },
       });
-      triggers.push(carouselTrigger);
+    };
 
-      gsap.set(track, { x: 0 });
-      const trackTween = gsap.to(track, {
-        x: -totalScroll,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: carousel,
-          start: 'top top',
-          end: endValue,
-          scrub: 1,
-          pin: false,
-        },
+    const images = Array.from(carousel.querySelectorAll('img'));
+    const totalImages = images.length;
+    let loadedCount = 0;
+
+    const onImageReady = () => {
+      loadedCount += 1;
+      if (loadedCount >= totalImages) {
+        // Pequeno delay para garantir layout finalizado
+        requestAnimationFrame(() => {
+          setupCarousel();
+          ScrollTrigger.refresh();
+        });
+      }
+    };
+
+    if (totalImages === 0) {
+      setupCarousel();
+    } else {
+      images.forEach((img) => {
+        if (img.complete) {
+          onImageReady();
+        } else {
+          img.addEventListener('load', onImageReady);
+          img.addEventListener('error', onImageReady);
+        }
       });
-      if (trackTween.scrollTrigger) triggers.push(trackTween.scrollTrigger);
     }
 
+    const onResize = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', onResize);
+
     return () => {
-      triggers.forEach((t) => t.kill());
+      images.forEach((img) => {
+        img.removeEventListener('load', onImageReady);
+        img.removeEventListener('error', onImageReady);
+      });
+      window.removeEventListener('resize', onResize);
+      trigger?.kill();
+      tween?.kill();
     };
   }, []);
 
@@ -172,51 +220,53 @@ function App() {
 
         {/* PROJETOS — carrossel horizontal de MacBooks */}
         <section id="portfolio" className="portfolio-space" ref={carouselRef}>
-          <div className="portfolio-carousel-header">
-            <p className="eyebrow">Trabalho</p>
-            <h3 className="section-title">Projetos</h3>
-          </div>
+          <div className="portfolio-carousel-inner">
+            <div className="portfolio-carousel-header">
+              <p className="eyebrow">Trabalho</p>
+              <h3 className="section-title">Projetos</h3>
+            </div>
 
-          <div className="portfolio-carousel-viewport">
-            <div className="carousel-track" ref={trackRef}>
-              {projects.map((project, index) => (
-                <div
-                  key={project.id}
-                  className={`macbook-card ${index === activeProject ? 'active' : ''}`}
-                >
-                  <div className="macbook-frame">
-                    <div className="macbook-camera"></div>
-                    <div className="macbook-screen">
-                      <img src={project.image} alt={project.name} />
+            <div className="portfolio-carousel-viewport">
+              <div className="carousel-track" ref={trackRef}>
+                {projects.map((project, index) => (
+                  <div
+                    key={project.id}
+                    className={`macbook-card ${index === activeProject ? 'active' : ''}`}
+                  >
+                    <div className="macbook-frame">
+                      <div className="macbook-camera"></div>
+                      <div className="macbook-screen">
+                        <img src={project.image} alt={project.name} />
+                      </div>
+                    </div>
+                    <div className="macbook-base">
+                      <div className="macbook-hinge"></div>
                     </div>
                   </div>
-                  <div className="macbook-base">
-                    <div className="macbook-hinge"></div>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="project-detail">
-            <span className="project-counter">
-              {String(activeProject + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
-            </span>
-            <h4>{projects[activeProject].name}</h4>
-            <p>{projects[activeProject].description}</p>
-            <div className="tech-row">
-              {projects[activeProject].technologies.slice(0, 6).map((tech) => (
-                <span key={tech}>{tech}</span>
-              ))}
+            <div className="project-detail">
+              <span className="project-counter">
+                {String(activeProject + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
+              </span>
+              <h4>{projects[activeProject].name}</h4>
+              <p>{projects[activeProject].description}</p>
+              <div className="tech-row">
+                {projects[activeProject].technologies.slice(0, 6).map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
+              <a
+                href={projects[activeProject].visitUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-visit"
+              >
+                Visitar website <ExternalLink size={14} />
+              </a>
             </div>
-            <a
-              href={projects[activeProject].visitUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-visit"
-            >
-              Visitar website <ExternalLink size={14} />
-            </a>
           </div>
         </section>
 

@@ -120,8 +120,13 @@ body {
   left: 0;
 }
 
-.icon-burger::before { top: -7px; }
-.icon-burger::after { top: 7px; }
+.icon-burger::before {
+  top: -7px;
+}
+
+.icon-burger::after {
+  top: 7px;
+}
 
 .icon-close {
   background: transparent;
@@ -138,8 +143,13 @@ body {
   left: 0;
 }
 
-.icon-close::before { transform: rotate(45deg); }
-.icon-close::after { transform: rotate(-45deg); }
+.icon-close::before {
+  transform: rotate(45deg);
+}
+
+.icon-close::after {
+  transform: rotate(-45deg);
+}
 
 /* ===== SECÇÕES ===== */
 .portfolio-container {
@@ -238,8 +248,15 @@ body {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
 }
 
 /* ===== TIMELINE ===== */
@@ -290,15 +307,20 @@ body {
 
 /* ===== PORTFOLIO CAROUSEL ===== */
 .portfolio-space {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.portfolio-carousel-inner {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 0 60px;
-  position: relative;
+  padding: 80px 0 40px;
   overflow: hidden;
-  background: #000;
 }
 
 .portfolio-carousel-header {
