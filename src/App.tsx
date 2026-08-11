@@ -160,7 +160,7 @@ function App() {
             <a href="#inicio" onClick={(e) => handleScroll(e, 'inicio')}>Início</a>
             <a href="#resumo" onClick={(e) => handleScroll(e, 'resumo')}>Resumo</a>
             <a href="#portfolio" onClick={(e) => handleScroll(e, 'portfolio')}>Projetos</a>
-            <a href="#skills" onClick={(e) => handleScroll(e, 'skills')}>Skills</a>
+            <a href="#skills" onClick={(e) => handleScroll(e, 'skills')}>Competências</a>
             <a href="#contactar" onClick={(e) => handleScroll(e, 'contactar')}>Contacto</a>
           </div>
 
@@ -187,7 +187,7 @@ function App() {
             </p>
           </div>
           <div className="scroll-cue">
-            <span>Scroll</span>
+            <span>Desliza</span>
             <ChevronDown size={18} />
           </div>
         </SpaceSection>
@@ -200,18 +200,18 @@ function App() {
 
             <div className="timeline">
               <div className="timeline-item">
-                <span className="timeline-date">2023 – 2026</span>
+                <span className="timeline-date">2023 – 2026(Previsão de conclusaão)</span>
                 <h4>Licenciatura em Engenharia Informática</h4>
                 <p>ISCTEM — 4.º Ano, 1.º Semestre</p>
               </div>
               <div className="timeline-item">
-                <span className="timeline-date">6 Meses</span>
+                <span className="timeline-date">Em Curso</span>
                 <h4>Estágio Profissional</h4>
-                <p>CBE — desenvolvimento de software e suporte técnico</p>
+                <p>CBE — desenvolvimento de software (Full-Stack) e suporte técnico</p>
               </div>
               <div className="timeline-item">
                 <span className="timeline-date">Contínuo</span>
-                <h4>Projetos Pessoais e em Grupo</h4>
+                <h4>Projectos Pessoais e em Grupo</h4>
                 <p>Web & Mobile, UI/UX, Backend e Frontend</p>
               </div>
             </div>
@@ -222,10 +222,9 @@ function App() {
         <section id="portfolio" className="portfolio-space" ref={carouselRef}>
           <div className="portfolio-carousel-inner">
             <div className="portfolio-carousel-header">
-              <p className="eyebrow">Trabalho</p>
-              <h3 className="section-title">Projetos</h3>
+              <p className="eyebrow">Trabalhos</p>
+              <h3 className="section-title">Projectos</h3>
             </div>
-
             <div className="portfolio-carousel-viewport">
               <div className="carousel-track" ref={trackRef}>
                 {projects.map((project, index) => (
@@ -264,7 +263,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="link-visit"
               >
-                Visitar website <ExternalLink size={14} />
+                Visitar site <ExternalLink size={14} />
               </a>
             </div>
           </div>
@@ -274,7 +273,7 @@ function App() {
         <SpaceSection id="skills" className="skills-space">
           <div className="center-stage">
             <p className="eyebrow">Competências</p>
-            <h3 className="section-title">Skills</h3>
+            <h3 className="section-title">Competências</h3>
 
             <div className="skills-list detailed">
               <div className="skill-block">
@@ -329,7 +328,7 @@ function App() {
 
             <form className="contact-form" action="https://formspree.io/f/mgooqokp" method="post">
               <input type="text" name="nome" placeholder="Nome" required />
-              <input type="email" name="email" placeholder="Email" required />
+              <input type="email" name="email" placeholder="E-mail" required />
               <textarea name="mensagem" rows={4} placeholder="Mensagem" required></textarea>
               <button type="submit" className="button-enviar">
                 Enviar <Send size={16} />

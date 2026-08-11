@@ -319,13 +319,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 0 40px;
+  padding: 20px 0 40px;
   overflow: hidden;
 }
 
 .portfolio-carousel-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: -30px;
   position: relative;
   z-index: 2;
 }
