@@ -326,6 +326,26 @@ body {
   will-change: transform;
 }
 
+@media (max-width: 900px) {
+  .portfolio-carousel-viewport {
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    gap: 60px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-track {
+    gap: 40px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+
 .macbook-card {
   flex-shrink: 0;
   display: flex;
@@ -416,7 +436,9 @@ body {
 
 .project-detail {
   max-width: 480px;
+  width: 100%;
   text-align: center;
+  padding: 0 24px;
 }
 
 .project-counter {
@@ -664,9 +686,8 @@ body {
     margin-bottom: 36px;
   }
 
-  .carousel-track {
-    gap: 40px;
-    padding: 0 5vw;
+  .portfolio-carousel-inner {
+    padding-top: 80px;
   }
 
   .macbook-frame {

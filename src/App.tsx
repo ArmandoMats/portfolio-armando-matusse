@@ -177,10 +177,10 @@ function App() {
               a criar soluções digitais funcionais, escaláveis e bem desenhadas.
             </p>
           </div>
-          <div className="scroll-cue">
+          {/* <div className="scroll-cue">
             <span>Desliza</span>
             <ChevronDown size={18} />
-          </div>
+          </div> */}
         </SpaceSection>
 
         {/* RESUMO */}
@@ -265,7 +265,7 @@ function App() {
         {/* SKILLS */}
         <SpaceSection id="skills" className="skills-space">
           <div className="center-stage">
-            <p className="eyebrow">Competências</p>
+            <p className="eyebrow">Domínios</p>
             <h3 className="section-title">Competências</h3>
 
             <div className="skills-list detailed">
