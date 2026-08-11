@@ -1,6 +1,5 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import {
-  ExternalLink,
   Mail,
   Phone,
   Send,
@@ -17,30 +16,9 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeProject, setActiveProject] = useState(0);
-  const progressRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-
-  // Barra de progresso da viagem
-  useEffect(() => {
-    if (!progressRef.current) return;
-
-    const tween = gsap.to(progressRef.current, {
-      scaleX: 1,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: document.body,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: 0.2,
-      },
-    });
-
-    return () => {
-      tween.scrollTrigger?.kill();
-      tween.kill();
-    };
-  }, []);
+  const pointerStartRef = useRef<{ x: number; y: number } | null>(null);
 
   // Carrossel horizontal de projetos — pin + scroll horizontal
   useLayoutEffect(() => {
@@ -140,14 +118,27 @@ function App() {
     }
   };
 
+  const handleMockPointerDown = (e: React.PointerEvent<HTMLAnchorElement>) => {
+    pointerStartRef.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const handleMockClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const start = pointerStartRef.current;
+    if (!start) return;
+
+    const moved =
+      Math.abs(e.clientX - start.x) > 5 || Math.abs(e.clientY - start.y) > 5;
+
+    pointerStartRef.current = null;
+
+    if (moved) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div className="portfolio-container">
       <GalaxyBackground />
-
-      {/* Barra de progresso superior */}
-      <div className="scroll-progress">
-        <div ref={progressRef} className="scroll-progress-bar" />
-      </div>
 
       {/* Navegação minimalista */}
       <header className="minimal-header">
@@ -232,15 +223,25 @@ function App() {
                     key={project.id}
                     className={`macbook-card ${index === activeProject ? 'active' : ''}`}
                   >
-                    <div className="macbook-frame">
-                      <div className="macbook-camera"></div>
-                      <div className="macbook-screen">
-                        <img src={project.image} alt={project.name} />
+                    <a
+                      href={project.visitUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="macbook-link"
+                      aria-label={`Visitar site de ${project.name}`}
+                      onPointerDown={handleMockPointerDown}
+                      onClick={handleMockClick}
+                    >
+                      <div className="macbook-frame">
+                        <div className="macbook-camera"></div>
+                        <div className="macbook-screen">
+                          <img src={project.image} alt={project.name} />
+                        </div>
                       </div>
-                    </div>
-                    <div className="macbook-base">
-                      <div className="macbook-hinge"></div>
-                    </div>
+                      <div className="macbook-base">
+                        <div className="macbook-hinge"></div>
+                      </div>
+                    </a>
                   </div>
                 ))}
               </div>
@@ -257,14 +258,6 @@ function App() {
                   <span key={tech}>{tech}</span>
                 ))}
               </div>
-              <a
-                href={projects[activeProject].visitUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-visit"
-              >
-                Visitar site <ExternalLink size={14} />
-              </a>
             </div>
           </div>
         </section>
