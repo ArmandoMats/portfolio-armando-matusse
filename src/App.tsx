@@ -3,7 +3,6 @@ import {
   Mail,
   Phone,
   Send,
-  ChevronDown,
 } from 'lucide-react';
 import { projects } from './data/projects';
 import { GalaxyBackground, SpaceSection } from './components/galaxy';
@@ -173,7 +172,7 @@ function App() {
             <h1 className="hero-name">Armando Matusse</h1>
             <h2 className="hero-role">Engenheiro de Software</h2>
             <p className="hero-description">
-              Estudante finalista de Engenharia Informática com +2 anos de experiência
+              Estudante finalista de Engenharia Informática com +3 anos de experiência
               a criar soluções digitais funcionais, escaláveis e bem desenhadas.
             </p>
           </div>
